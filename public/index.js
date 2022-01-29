@@ -11,7 +11,7 @@ const phone_number = process.env.phone_number;
 const twilio_phone_number = process.env.twilio_phone_number;
 const client = require('twilio')(accountSid, authToken);
 const messagingResponse = require('twilio').twiml.messagingResponse;
-const { StepPage } = require('twilio/lib/rest/studio/v1/flow/engagement/step');
+// const { StepPage } = require('twilio/lib/rest/studio/v1/flow/engagement/step');
 
 // (async function() {
 //     const url = await ngrok.connect(7007);
@@ -20,7 +20,7 @@ const { StepPage } = require('twilio/lib/rest/studio/v1/flow/engagement/step');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
-app.use(express.static(__dirname +'/public'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req,res) => {
     res.render("home");
