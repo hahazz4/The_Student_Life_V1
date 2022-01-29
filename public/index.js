@@ -7,6 +7,7 @@ const path = require('path');
 const ngrok = require('ngrok');
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
+const phone_number = process.env.phone_number;
 const client = require('twilio')(accountSid, authToken);
 const messagingResponse = require('twilio').twiml.messagingResponse;
 const { StepPage } = require('twilio/lib/rest/studio/v1/flow/engagement/step');
@@ -42,7 +43,7 @@ app.get('/', (req,res) => {
 //     .create({
 //         body: 'This is testing 123 man!',
 //         from: '+16479057351',
-//         to: '+16476889140'
+//         to: 'phone_number'
 //     })
 //   .then(message => console.log(message.sid))
 //   .catch(err => console.log("An error has occured!"));
