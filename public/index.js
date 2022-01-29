@@ -10,7 +10,6 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 const messagingResponse = require('twilio').twiml.messagingResponse;
 const { StepPage } = require('twilio/lib/rest/studio/v1/flow/engagement/step');
-// AC2905dbeb4b8fc9dcfb56ea420dc96646, e1fd0aab95ae6869ce5103565ba1545d
 
 // (async function() {
 //     const url = await ngrok.connect(7007);
