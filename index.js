@@ -16,14 +16,13 @@ const messagingResponse = require('twilio').twiml.messagingResponse;
 // (async function() {
 //     const url = await ngrok.connect(7007);
 // });
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views'));
-
-app.use(express.static(__dirname + '/public'));
+app.set('views', path.join(__dirname, 'public/views'));
 
 app.get('/', (req,res) => {
-    res.render("home");
+    res.render('home');
 });
 
 // app.post('/sms', (req,res) => {
