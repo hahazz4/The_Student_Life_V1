@@ -25,6 +25,18 @@ app.get('/', (req,res) => {
     res.render('home');
 });
 
+app.get('/reminders', (req,res) => {
+    res.render('reminders');
+});
+
+app.get('/howto', (req,res) => {
+    res.render('howTo');
+});
+
+app.get('/support', (req,res) => {
+    res.render('support');
+});
+
 // app.post('/sms', (req,res) => {
 //     const twiml = new messagingResponse();
 
