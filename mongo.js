@@ -9,3 +9,6 @@
 
 //     return mongoose;
 // }
+
+const Reminder = require('./models/product');
+

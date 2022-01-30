@@ -5,14 +5,24 @@ const express = require("express");
 const app = express();
 const path = require('path');
 const ngrok = require('ngrok');
-const mongo = require('./mongo');
+const mongoose = require('mongoose');
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const phone_number = process.env.phone_number;
 const twilio_phone_number = process.env.twilio_phone_number;
 const client = require('twilio')(accountSid, authToken);
 const messagingResponse = require('twilio').twiml.messagingResponse;
-// const { StepPage } = require('twilio/lib/rest/studio/v1/flow/engagement/step');
+
+const Reminder = require('./models/reminders');
+
+// mongoose.connect('mongodb://localhost:27017/TheStudentLife', { useNewUrlParser: true, useUnifiedTopology: true })
+//     .then(() => {
+//         console.log("MONGO CONNECTED!");
+//     })
+//     .catch(err => {
+//         console.log("NO MONGO CONNECTION!");
+//         console.log(err);
+//     })
 
 (async function() {
     const url = await ngrok.connect(7007);
@@ -62,18 +72,6 @@ app.get('/support', (req,res) => {
 //   .then(message => console.log(message.sid))
 //   .catch(err => console.log("An error has occured!"));
 // };
-
-// const connectToMongo = async() => {
-//     await mongo().then((mongoose) => {
-//         try{
-//             console.log('Connected to the database');
-//         }finally{
-//             mongoose.connection.close();
-//         }
-//     });
-// }
-
-// connectToMongo();
 
 app.listen(7000, (req,res) => {
     console.log("The server is up and running!");
