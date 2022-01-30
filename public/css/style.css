@@ -5,28 +5,31 @@ font-family: 'Comforter', sans-serif;
 font-family: 'Dancing Script', sans-serif; 
 */
 
-body{
-    background-color: white
+html,body
+{
+    background-color: white;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 #paraStyles{
     /* background-color: #063970; */
     color: #063970;
     margin-top: 1.25rem;
-    /* margin-right: 40.25rem;
-    margin-left: 40.25rem; */
     font-size: 1.5rem;
     font-family: 'Arimo', sans-serif;
 }
 
 #mainTStyle{
-    /* padding-left: 1.5rem;
-    padding-right: 1.5rem; */
+    padding-left: .5rem;
+    padding-right: .5rem;
     background-color: #063970;
+    padding-top: 1rem;
+    padding-top: 1rem;
     color: white;
-    margin-top: 1.25rem;
-    margin-right: 40.25rem;
-    margin-left: 40.25rem;
+    margin-top: 3.50rem;
     font-size: 3.5rem;
     font-family: 'Arimo', sans-serif;
 }
@@ -49,6 +52,7 @@ body{
 }
 
 #navLinkStyles{
+    text-align: center;
     transition: 0.5s;
     margin-left: 1rem;
     font-size: 1.3rem;
