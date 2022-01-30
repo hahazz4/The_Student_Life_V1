@@ -11,7 +11,7 @@ const phone_number = process.env.phone_number;
 const twilio_phone_number = process.env.twilio_phone_number;
 const client = require('twilio')(accountSid, authToken);
 const messagingResponse = require('twilio').twiml.messagingResponse;
-// const { StepPage } = require('twilio/lib/rest/studio/v1/flow/engagement/step');
+const { StepPage } = require('twilio/lib/rest/studio/v1/flow/engagement/step');
 
 // (async function() {
 //     const url = await ngrok.connect(7007);
@@ -50,17 +50,17 @@ app.get('/support', (req,res) => {
 //     console.log("Express server listening on port 7007");
 // });
 
-// // // app.get('/reminders', (req,res) => {
-// client.messages
-//     .create({
-//         body: 'This is testing 123 man!',
-//         from: 'twilio_phone_number',
-//         to: 'phone_number'
-//     })
-//   .then(message => console.log(message.sid))
-//   .catch(err => console.log("An error has occured!"));
-// //     // res.render("");
-// // // });
+function sendMessage() {
+client.messages
+    .create({
+        body: 'This is testing 123 man!',
+        from: twilio_phone_number,
+        to: phone_number
+    })
+  .then(message => console.log(message.sid))
+  .catch(err => console.log("An error has occured!"));
+//     // res.render("");
+};
 
 app.listen(7000, (req,res) => {
     console.log("The server is up and running!");
